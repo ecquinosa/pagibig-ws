@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetMemberInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEMBERID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMemberInfoResult" type="tns:SearchResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SearchResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsGet" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberInfo" type="tns:HDMFMember" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsComplete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetErrorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PagIBIGIDNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RTN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="FatherName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpouseName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlaceOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityMunicipalityOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CivilStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Citizenship" type="tns:HDMFDescCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommonRefNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SSSIDNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSISIDNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberCategoryInfo" type="tns:HDMFMembershipCategory" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermanentAddress" type="tns:HDMFAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="PresentAddress" type="tns:HDMFAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreferredMailingAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelNo" type="tns:HDMFContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileTelNo" type="tns:HDMFContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessDirectTelNo" type="tns:HDMFContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessTrunkTelNo" type="tns:HDMFContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmploymentHistory" type="tns:ArrayOfHDMFEmploymentHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFName">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameExtension" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoMiddleName" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFDescCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFMembershipCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MembershipCategory" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerAddress" type="tns:HDMFAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateEmployed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmploymentStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="tns:HDMFDescCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="AFPSerialBadgeNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepEdDivCodeStnCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeOfWork" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManningAgency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryofAssignment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BasicSalary" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Allowance" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="HBURNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lot_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Block_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phase_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="House_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subdivision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Baranggay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityMunicipality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZIP_Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFContactInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Country_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Local_No" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHDMFEmploymentHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HDMFEmploymentHistory" nillable="true" type="tns:HDMFEmploymentHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFEmploymentHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateEmployed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateSeparated" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMemberMCRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PagIBIGID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberMCRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMemberMCRecordResult" type="tns:Result_MemberMCRec" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Result_MemberMCRec">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MemberMcRec" type="tns:ArrayOfHDMFMCRecord" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGet" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetErrorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHDMFMCRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HDMFMCRecord" nillable="true" type="tns:HDMFMCRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFMCRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PagIbigID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IngresID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberMiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberNameExtension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InitialPFRNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InitialPFRDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InitialPFRAmt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastPeriodCover" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastPFRNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastPFRDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastPFRAmt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TAVBalance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Branch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PushCardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagibigid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="birthdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiry_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date_issued" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bank_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msb_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PushCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PushCardInfoResult" type="tns:ExecuteResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExecuteResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Is_success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetErrorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateCardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagibigid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="old_cardno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_cardno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bank_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCardInfoResult" type="tns:ExecuteResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActiveCardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagibigid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bank_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActiveCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActiveCardInfoResult" type="tns:Card_ExecuteResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Card_ExecuteResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGet" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMemberInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberMCRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberMCRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberMCRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberMCRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PushCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:PushCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="PushCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:PushCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActiveCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActiveCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="ActiveCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActiveCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetMemberInfo">
+      <wsdl:input message="tns:GetMemberInfoSoapIn" />
+      <wsdl:output message="tns:GetMemberInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberMCRecord">
+      <wsdl:input message="tns:GetMemberMCRecordSoapIn" />
+      <wsdl:output message="tns:GetMemberMCRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PushCardInfo">
+      <wsdl:input message="tns:PushCardInfoSoapIn" />
+      <wsdl:output message="tns:PushCardInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardInfo">
+      <wsdl:input message="tns:UpdateCardInfoSoapIn" />
+      <wsdl:output message="tns:UpdateCardInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActiveCardInfo">
+      <wsdl:input message="tns:ActiveCardInfoSoapIn" />
+      <wsdl:output message="tns:ActiveCardInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMemberInfo">
+      <soap:operation soapAction="http://tempuri.org/GetMemberInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberMCRecord">
+      <soap:operation soapAction="http://tempuri.org/GetMemberMCRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushCardInfo">
+      <soap:operation soapAction="http://tempuri.org/PushCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveCardInfo">
+      <soap:operation soapAction="http://tempuri.org/ActiveCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMemberInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberMCRecord">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberMCRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushCardInfo">
+      <soap12:operation soapAction="http://tempuri.org/PushCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActiveCardInfo">
+      <soap12:operation soapAction="http://tempuri.org/ActiveCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://116.50.155.83/test_loyalty_card_phase3/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://116.50.155.83/test_loyalty_card_phase3/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://allcardtech.com.ph/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://allcardtech.com.ph/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://allcardtech.com.ph/">
+      <s:element name="is_MID_RTN_Exist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MID_RTN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="webuser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="webpass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="is_MID_RTN_ExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="is_MID_RTN_ExistResult" type="tns:SubmitResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SubmitResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SearchResult" type="tns:SearchResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberInfo" type="tns:MemberInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSent" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SuccessfullyExecuted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AlreadyExist" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSuccessfully_Deleted_to_parked" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGet" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberInfo" type="tns:HDMFMember" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsComplete" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetErrorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:complexType name="HDMFMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="PagIBIGIDNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RTN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthCertName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="FatherName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpouseName" type="tns:HDMFName" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlaceOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityMunicipalityOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CivilStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Citizenship" type="tns:HDMFDescCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProminentDistinguishingFacialFeature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommonRefNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SSSIDNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSISIDNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberCategoryInfo" type="tns:HDMFMembershipCategory" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermanentAddress" type="tns:HDMFAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="PresentAddress" type="tns:HDMFAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreferredMailingAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelNo" type="tns:HDMFContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileTelNo" type="tns:HDMFContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessDirectTelNo" type="tns:HDMFContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessTrunkTelNo" type="tns:HDMFContactInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Beneficiaries" type="tns:ArrayOfHDMFBeneficiary" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmploymentHistory" type="tns:ArrayOfHDMFEmploymentHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFName">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameExtension" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoMiddleName" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFDescCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFMembershipCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="MembershipCategory" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerAddress" type="tns:HDMFAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateEmployed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmploymentStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Occupation" type="tns:HDMFDescCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="AFPSerialBadgeNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepEdDivCodeStnCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeOfWork" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManningAgency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryofAssignment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BasicSalary" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Allowance" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="HBURNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Building" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lot_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Block_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phase_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="House_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subdivision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Baranggay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityMunicipality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZIP_Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFContactInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Local_No" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHDMFBeneficiary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HDMFBeneficiary" nillable="true" type="tns:HDMFBeneficiary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFBeneficiary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Middlename" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameExtension" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoMiddleName" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Relationship" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfHDMFEmploymentHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HDMFEmploymentHistory" nillable="true" type="tns:HDMFEmploymentHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HDMFEmploymentHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployerAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateEmployed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateSeparated" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberInfo" abstract="true" />
+      <s:element name="Is_Member_Active">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_Member_ActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Is_Member_ActiveResult" type="tns:ACCMCRecordClassResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ACCMCRecordClassResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ACCMCRecordClass" type="tns:ArrayOfMemberContribution" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSent" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMemberContribution">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MemberContribution" nillable="true" type="tns:MemberContribution" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberContribution">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MCIngresID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCMiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCExt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCDateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCInitialPFRNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCInitialPFRDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCInitialPFRAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCLastPeriodCover" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCLastPFRDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCLastPFRNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCLastPFRAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCTAVBalance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCEmployerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCEmployerBranch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCEmployerStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="is_MemberFullName_Exist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="is_MemberFullName_ExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="is_MemberFullName_ExistResult" type="tns:PrimaryMultiple" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PrimaryMultiple">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ACCMCMultipleRec" type="tns:ArrayOfMultipleRecord" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSent" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMultipleRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MultipleRecord" nillable="true" type="tns:MultipleRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MultipleRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RecMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecMiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecExt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecDateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecMarital" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecCitizenship" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecSex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecBplace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecTin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecSSS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecEmpNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecPNP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecDepEd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecMotherMaiden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecSpouse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecSpouseMiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecSpouseLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecSpouseExt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecRTN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateRTN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateRTNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateRTNResult" type="tns:Result_GetMemberID" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Result_GetMemberID">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGEt" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PagIBIGID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetErrorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PagIBIGLogIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApprovedID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApprovedPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PagIBIGLogINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PagIBIGLogINResult" type="tns:Result_AuthenticateMCIFApprover" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Result_AuthenticateMCIFApprover">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSuccessful" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestDateTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="is_MID_RTN_ExistSoapIn">
+    <wsdl:part name="parameters" element="tns:is_MID_RTN_Exist" />
+  </wsdl:message>
+  <wsdl:message name="is_MID_RTN_ExistSoapOut">
+    <wsdl:part name="parameters" element="tns:is_MID_RTN_ExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="Is_Member_ActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:Is_Member_Active" />
+  </wsdl:message>
+  <wsdl:message name="Is_Member_ActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:Is_Member_ActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="is_MemberFullName_ExistSoapIn">
+    <wsdl:part name="parameters" element="tns:is_MemberFullName_Exist" />
+  </wsdl:message>
+  <wsdl:message name="is_MemberFullName_ExistSoapOut">
+    <wsdl:part name="parameters" element="tns:is_MemberFullName_ExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateRTNSoapIn">
+    <wsdl:part name="parameters" element="tns:updateRTN" />
+  </wsdl:message>
+  <wsdl:message name="updateRTNSoapOut">
+    <wsdl:part name="parameters" element="tns:updateRTNResponse" />
+  </wsdl:message>
+  <wsdl:message name="PagIBIGLogINSoapIn">
+    <wsdl:part name="parameters" element="tns:PagIBIGLogIN" />
+  </wsdl:message>
+  <wsdl:message name="PagIBIGLogINSoapOut">
+    <wsdl:part name="parameters" element="tns:PagIBIGLogINResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PagIbig_WSSoap">
+    <wsdl:operation name="is_MID_RTN_Exist">
+      <wsdl:input message="tns:is_MID_RTN_ExistSoapIn" />
+      <wsdl:output message="tns:is_MID_RTN_ExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_Member_Active">
+      <wsdl:input message="tns:Is_Member_ActiveSoapIn" />
+      <wsdl:output message="tns:Is_Member_ActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="is_MemberFullName_Exist">
+      <wsdl:input message="tns:is_MemberFullName_ExistSoapIn" />
+      <wsdl:output message="tns:is_MemberFullName_ExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRTN">
+      <wsdl:input message="tns:updateRTNSoapIn" />
+      <wsdl:output message="tns:updateRTNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PagIBIGLogIN">
+      <wsdl:input message="tns:PagIBIGLogINSoapIn" />
+      <wsdl:output message="tns:PagIBIGLogINSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PagIbig_WSSoap" type="tns:PagIbig_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="is_MID_RTN_Exist">
+      <soap:operation soapAction="http://allcardtech.com.ph/is_MID_RTN_Exist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_Member_Active">
+      <soap:operation soapAction="http://allcardtech.com.ph/Is_Member_Active" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="is_MemberFullName_Exist">
+      <soap:operation soapAction="http://allcardtech.com.ph/is_MemberFullName_Exist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRTN">
+      <soap:operation soapAction="http://allcardtech.com.ph/updateRTN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagIBIGLogIN">
+      <soap:operation soapAction="http://allcardtech.com.ph/PagIBIGLogIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PagIbig_WSSoap12" type="tns:PagIbig_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="is_MID_RTN_Exist">
+      <soap12:operation soapAction="http://allcardtech.com.ph/is_MID_RTN_Exist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_Member_Active">
+      <soap12:operation soapAction="http://allcardtech.com.ph/Is_Member_Active" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="is_MemberFullName_Exist">
+      <soap12:operation soapAction="http://allcardtech.com.ph/is_MemberFullName_Exist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRTN">
+      <soap12:operation soapAction="http://allcardtech.com.ph/updateRTN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagIBIGLogIN">
+      <soap12:operation soapAction="http://allcardtech.com.ph/PagIBIGLogIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PagIbig_WS">
+    <wsdl:port name="PagIbig_WSSoap" binding="tns:PagIbig_WSSoap">
+      <soap:address location="http://192.168.10.100:85/ACC_PH2.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PagIbig_WSSoap12" binding="tns:PagIbig_WSSoap12">
+      <soap12:address location="http://192.168.10.100:85/ACC_PH2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

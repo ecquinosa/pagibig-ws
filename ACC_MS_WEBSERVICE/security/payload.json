@@ -1,0 +1,59 @@
+{
+  "exp": 1561046399000,
+  "aud": "cashcard",
+  "sub": "create account",
+  "jti": "411ce8f4-e43d-4353-8ee4-5d97f0b624e7",
+  "cashCardApplication": {
+    "cardNo": "1174567890111111",
+    "cardExpiry": "2028-11",
+    "clientInfo": {
+      "applicantName": {
+        "lastName": "Cabili",
+        "firstName": "JC",
+        "middleName": "B"
+      },
+      "motherLastName": "Ramos",
+      "motherFirstName": "Gloria",
+      "birthDate": "1976-07-04",
+      "birthPlace": "BIRTHPLACE",
+      "sourceFunds": "E",
+      "nationality": "608",
+      "sex": "MALE",
+      "civilStatus": "MARRIED",
+      "homeAddress": {
+        "street": "#124 Park St",
+        "brgy": "Talon Uno",
+        "city": "02",
+        "province": "28",
+        "provinceDesc": "ILOCOS NORTE",
+        "country": "608",
+        "zipCode": "1234"
+      },
+      "permanentAddress": {
+        "street": "#124 Bethel",
+        "brgy": "Brgy. 12345",
+        "city": "04",
+        "province": "39",
+        "country": "608",
+        "zipCode": "1200"
+      },
+      "homePhoneNo": "8743120",
+      "mobileNo": "09164503467",
+      "email": "email@domain.com",
+      "employerName": "Company Inc",
+      "empAddress": "#17 ADB Ave, Ortigas, Pasig",
+      "empPhoneNo": "6313333",
+      "idType1": "ID26",
+      "idNo1": "123456789101",
+      "idType2": "ID2",
+      "idNo2": "123456789",
+      "idType3": "ID3",
+      "idNo3": "123456789",
+      "natureOfBusiness": "1"
+    },
+    "remarks": "afsfsf sdfsfsf",
+    "acctOpeningMethod": "RC",
+    "productsAndServices": "10001001101000000000",
+    "monthlyVolumeOfTxns": "100"
+  }
+}

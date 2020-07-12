@@ -1,0 +1,69 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ACC_WEB_Uname" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ulilangkawayan</Value>
+    </Setting>
+    <Setting Name="ACC_WEB_Pass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ragMANOK2kx</Value>
+    </Setting>
+    <Setting Name="Database" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LCDB_01</Value>
+    </Setting>
+    <Setting Name="ServerUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">allcard</Value>
+    </Setting>
+    <Setting Name="AUB_BasedURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://222.127.151.17/CashCardPartnerWs</Value>
+    </Setting>
+    <Setting Name="PAGIBIG_WS_User" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">USERID</Value>
+    </Setting>
+    <Setting Name="PAGIBIG_WS_Pass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/puhsIp5Q0qVpQl/zsPU7g==</Value>
+    </Setting>
+    <Setting Name="AUB_WS_TIMEOUT" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="PAGIBIG_BasedURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://116.50.155.83/test_loyalty_card_phase3//Service.asmx?</Value>
+    </Setting>
+    <Setting Name="TimeKeeping_BasedURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://10.88.87.67:1998/PAG-IBIG_TNA_WEBSERVICE.asmx</Value>
+    </Setting>
+    <Setting Name="CentralizedServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10.88.87.68</Value>
+    </Setting>
+    <Setting Name="CentralizedServerUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">allcard</Value>
+    </Setting>
+    <Setting Name="CentralizedServerPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">rIGnvrPpLelCG8lDiJLgbOAQ2CsJpaXfKr1jXIqRJyQ=</Value>
+    </Setting>
+    <Setting Name="CentralizedDatabase" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LCDB_01_SYS</Value>
+    </Setting>
+    <Setting Name="WS_Repo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\PAGIBIG\ACCPAGIBIGPH3</Value>
+    </Setting>
+    <Setting Name="SharedFolder" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\</Value>
+    </Setting>
+    <Setting Name="ACC_MS_WEBSERVICE_PagibigWebService_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://116.50.155.83/test_loyalty_card_phase3/Service.asmx</Value>
+    </Setting>
+    <Setting Name="BankID" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BankBin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">429253|429254</Value>
+    </Setting>
+    <Setting Name="Server" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10.88.87.68</Value>
+    </Setting>
+    <Setting Name="ServerPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">rIGnvrPpLelCG8lDiJLgbOAQ2CsJpaXfKr1jXIqRJyQ=</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

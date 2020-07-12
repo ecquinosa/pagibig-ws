@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="Database" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LCDB_01</Value>
+    </Setting>
+    <Setting Name="ServerUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">allcard</Value>
+    </Setting>
+    <Setting Name="Server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.88.87.71</Value>
+    </Setting>
+    <Setting Name="WsUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ulilangkawayan</Value>
+    </Setting>
+    <Setting Name="WsPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ragMANOK2kx</Value>
+    </Setting>
+    <Setting Name="BankID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="WS_Repo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\PAGIBIG\ACCPAGIBIGPH3</Value>
+    </Setting>
+    <Setting Name="ServerPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MikasaAckerman#=</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

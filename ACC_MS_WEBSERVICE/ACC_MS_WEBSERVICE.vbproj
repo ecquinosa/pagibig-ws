@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{047D9482-ADE6-473B-B100-8FD76C8F27F4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ACC_MS_WEBSERVICE</RootNamespace>
+    <AssemblyName>ACC_MS_WEBSERVICE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ACC_MS_WEBSERVICE.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ACC_MS_WEBSERVICE.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\..\..\lib\RS256Parser\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="jose-jwt">
+      <HintPath>..\..\..\lib\RS256Parser\lib\jose-jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RS256Parser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\RS256Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sql\3.1.0.26.sql" />
+    <Content Include="ACC_MS_WEBSERVICE.asmx" />
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="sql\3.1.0.16_CardTransaction.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>3.1.0.16_CardTransaction.sql</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\3.1.0.16_CardTransaction.sql">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>3.1.0.16_CardTransaction.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sql\3.1.0.21.sql" />
+    <Content Include="sql\3.1.0.23_SYS.sql" />
+    <Content Include="sql\3.1.0.30.sql" />
+    <Content Include="sql\3.1.0.34.sql" />
+    <Content Include="sql\3.1.0.5.sql" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="readme.md" />
+    <None Include="packages.config" />
+    <Content Include="sql\3.1.0.16_DCS_Upload.sql" />
+    <Content Include="sql\3.1.0.20.sql" />
+    <Content Include="Web References\PagibigWebService\Card_ExecuteResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\PagibigWebService\ExecuteResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\PagibigWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <Content Include="Web References\PagibigWebService\Result_MemberMCRec.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\PagibigWebService\SearchResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\PagibigWebService\Service.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionString.vb" />
+    <Compile Include="ACC_MS_WEBSERVICE.asmx.vb">
+      <DependentUpon>ACC_MS_WEBSERVICE.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccess\DAL.vb" />
+    <Compile Include="DataAccess\ODBCDataAccess.vb" />
+    <Compile Include="For PAGIBIG Class\GetRegisteredMemberResult.vb" />
+    <Compile Include="For PAGIBIG Class\RecordUpdatedFields.vb" />
+    <Compile Include="Helpers\Constants.vb" />
+    <Compile Include="Helpers\Utilities.vb" />
+    <Compile Include="Member Class\ACCMCRecordClassResult.vb" />
+    <Compile Include="Member Class\ACCMultipleRecord.vb" />
+    <Compile Include="Member Class\ActiveCardInfoResult.vb" />
+    <Compile Include="Member Class\Beneficiaries.vb" />
+    <Compile Include="Member Class\BirthCertName.vb" />
+    <Compile Include="Member Class\BusinessDirectTelNo.vb" />
+    <Compile Include="Member Class\BusinessTrunkTelNo.vb" />
+    <Compile Include="Member Class\CapturedImages.vb" />
+    <Compile Include="PHASE3\CashOnHand.vb" />
+    <Compile Include="PHASE3\DepositBankAccount.vb" />
+    <Compile Include="PHASE3\DepositTransaction.vb" />
+    <Compile Include="Member Class\EmploymentHistoryList.vb" />
+    <Compile Include="Member Class\EmployerAddress.vb" />
+    <Compile Include="Member Class\EmploymentHistory.vb" />
+    <Compile Include="Member Class\FatherName.vb" />
+    <Compile Include="Member Class\GetBackDoor.vb" />
+    <Compile Include="Member Class\HomeTelNo.vb" />
+    <Compile Include="Member Class\LogEmployeeResult.vb" />
+    <Compile Include="Member Class\MemberContribution.vb" />
+    <Compile Include="Member Class\MemberInfo.vb" />
+    <Compile Include="Member Class\MemberName.vb" />
+    <Compile Include="Member Class\MemberOther.vb" />
+    <Compile Include="Member Class\MembershipCategory.vb" />
+    <Compile Include="Member Class\MobileTelNo.vb" />
+    <Compile Include="Member Class\MotherName.vb" />
+    <Compile Include="Member Class\MultipleMember.vb" />
+    <Compile Include="Member Class\PermanentAddress.vb" />
+    <Compile Include="Member Class\PresentAddress.vb" />
+    <Compile Include="Member Class\SpouseName.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PHASE3\AUBCreateAccountRequest.vb" />
+    <Compile Include="PHASE3\AUBGetCardNoRequest.vb" />
+    <Compile Include="PHASE3\AUBRequest.vb" />
+    <Compile Include="PHASE3\AUBResponse.vb" />
+    <Compile Include="PHASE3\AUBReplaceCardRequest.vb" />
+    <Compile Include="PHASE3\DataKeysEnum.vb" />
+    <Compile Include="PHASE3\DCS_Card_ReprintList.vb" />
+    <Compile Include="PHASE3\DCS_Card_Spoiled.vb" />
+    <Compile Include="PHASE3\DCS_Card_Transaction.vb" />
+    <Compile Include="PHASE3\DCS_Upload.vb" />
+    <Compile Include="PHASE3\MemberBio.vb" />
+    <Compile Include="PHASE3\LogTrace.vb" />
+    <Compile Include="PHASE3\MemberContactinfo.vb" />
+    <Compile Include="PHASE3\MemberEmploymentHistoryList.vb" />
+    <Compile Include="PHASE3\MembershipCategoryInfo.vb" />
+    <Compile Include="PHASE3\MemContribution.vb" />
+    <Compile Include="PHASE3\Bio.vb" />
+    <Compile Include="PHASE3\MemberDetails.vb" />
+    <Compile Include="PHASE3\UpdateCardInfoResult.vb" />
+    <Compile Include="PHASE3\RequestResponse.vb" />
+    <Compile Include="PHASE3\MemberEmploymentHistory.vb" />
+    <Compile Include="PHASE3\PhotoValidID.vb" />
+    <Compile Include="PHASE3\DCS_Card_Reprint.vb" />
+    <Compile Include="PHASE3\DCS_Card_Account.vb" />
+    <Compile Include="PHASE3\Card.vb" />
+    <Compile Include="PHASE3\InstanceIssuance.vb" />
+    <Compile Include="PHASE3\Survey.vb" />
+    <Compile Include="PHASE3\Signature.vb" />
+    <Compile Include="PHASE3\Photo.vb" />
+    <Compile Include="PHASE3\Member.vb" />
+    <Compile Include="PHASE3\RequestAuth.vb" />
+    <Compile Include="PHASE3\PushCardInfoRequest.vb" />
+    <Compile Include="PHASE3\UserBank.vb" />
+    <Compile Include="PHASE3\UserEmployerBranch.vb" />
+    <Compile Include="PHASE3\PushCardInfoResult.vb" />
+    <Compile Include="PHASE3\PHASE3.vb" />
+    <Compile Include="PHASE3\HDMFDescCode.vb" />
+    <Compile Include="PHASE3\LogInResponse.vb" />
+    <Compile Include="PHASE3\SearchResult.vb" />
+    <Compile Include="SubmitResult.vb" />
+    <Compile Include="Web References\PagibigWebService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://116.50.155.83/test_loyalty_card_phase3/Service.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PagibigWebService\</RelPath>
+      <UpdateFromURL>http://116.50.155.83/test_loyalty_card_phase3/Service.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ACC_MS_WEBSERVICE_PagibigWebService_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!--<Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />-->
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1642</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1649/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:1649/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
