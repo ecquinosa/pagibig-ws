@@ -2724,6 +2724,7 @@ Public Class ACC_MS_WEBSERVICE
         Dim IsProcessSuccess As Boolean = False
 
         Dim oldCardNo As String = ""
+        Dim origOldCardNo As String = ""
         Dim newCardNo As String = ""
 
         Dim DAL As New DAL
@@ -2812,6 +2813,7 @@ Public Class ACC_MS_WEBSERVICE
                                                                         Else
                                                                             oldCardNo = DCS_Card_ReprintList.DCS_Card_ReprintList(i).OldCardNo
                                                                             newCardNo = DCS_Card_ReprintList.DCS_Card_ReprintList(i).NewCardNo
+                                                                            origOldCardNo = oldCardNo
                                                                         End If
                                                                     End If
                                                                 Next
@@ -3088,7 +3090,17 @@ Public Class ACC_MS_WEBSERVICE
                     Dim employeeID = MembershipCategoryInfo.EmployeeID
                     Dim _accountNumber = DCS_Card_Account.AccountNumber
                     If Member.Application_Remarks.Contains("Re-card") Then
-                        employeeID = oldCardNo ' Should replace by old card number.
+                        'employeeID = oldCardNo ' Should replace by old card number.
+
+                        'revised on 07/22/2020 to fix memfiles issue of oldCardNo=newCardNo
+                        'If oldCardNo <> newCardNo Then
+                        '    employeeID = oldCardNo
+                        'Else
+                        '    employeeID = origOldCardNo '''origOldCardNo came from DSA
+                        'End If
+
+                        employeeID = origOldCardNo
+
                         _accountNumber = DCS_Card_Account.CardNo
                     End If
 
@@ -4147,6 +4159,7 @@ Public Class ACC_MS_WEBSERVICE
         Dim IsProcessSuccess As Boolean = False
 
         Dim oldCardNo As String = ""
+        Dim origOldCardNo As String = ""
         Dim newCardNo As String = ""
 
         Dim DAL As New DAL
@@ -4235,6 +4248,7 @@ Public Class ACC_MS_WEBSERVICE
                                                                         Else
                                                                             oldCardNo = DCS_Card_ReprintList.DCS_Card_ReprintList(i).OldCardNo
                                                                             newCardNo = DCS_Card_ReprintList.DCS_Card_ReprintList(i).NewCardNo
+                                                                            origOldCardNo = oldCardNo
                                                                         End If
                                                                     End If
                                                                 Next
@@ -4507,7 +4521,17 @@ Public Class ACC_MS_WEBSERVICE
                         Dim employeeID = MembershipCategoryInfo.EmployeeID
                         Dim _accountNumber = DCS_Card_Account.AccountNumber
                         If Member.Application_Remarks.Contains("Re-card") Then
-                            employeeID = oldCardNo ' Should replace by old card number.
+                            'employeeID = oldCardNo ' Should replace by old card number.
+
+                            'revised on 07/22/2020 to fix memfiles issue of oldCardNo=newCardNo
+                            'If oldCardNo <> newCardNo Then
+                            '    employeeID = oldCardNo
+                            'Else
+                            '    employeeID = origOldCardNo
+                            'End If
+
+                            employeeID = origOldCardNo
+
                             _accountNumber = DCS_Card_Account.CardNo
                         End If
 
